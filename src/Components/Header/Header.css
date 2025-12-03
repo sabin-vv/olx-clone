@@ -1,0 +1,69 @@
+.header-container {
+  padding: 10px 16px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(239 241 243);
+}
+
+.olx-logo {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.location-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 2px solid;
+  padding: 0 8px;
+  background: white;
+  border-radius: 4px;
+}
+
+.location-box input {
+  width: 180px;
+  border: none;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid;
+  padding: 0 8px;
+  background: white;
+  border-radius: 4px;
+}
+
+.search-box input {
+  width: 750px;
+  border: none;
+}
+
+.lang-select-box {
+  display: flex;
+  align-items: center;
+}
+
+.lang-select-box select {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.action-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.my-dropwown p {
+  margin: 2px 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
