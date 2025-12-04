@@ -7,6 +7,7 @@ import { db, fetchFromFireStore } from "../db/firebase"
 import { userAuth } from "../Components/Context/AuthContext"
 import { doc, getDoc, setDoc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
+import LowerFooter from "../Components/Footer/Footer"
 
 export default function Home() {
     const [openmodal, setOpenModal] = useState(null)
@@ -63,9 +64,9 @@ export default function Home() {
             <Category />
             <LoginModal modalToggle={toggleModal} status={openmodal} />
             {products.length > 0 ? (
-                <div className="grid grid-cols-4 gap-6 px-6 mt-10 justify-items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-3 sm:px-6 mt-6 sm:mt-10 my-6">
                     {products.map(item => (
-                        <div onClick={() => navigate(`/product/${item.id}`)} key={item.id} className="w-[250px] h-[330px] border rounded-md shadow-sm hover:shadow-lg cursor-pointer bg-white transition relative flex flex-col" >
+                        <div onClick={() => navigate(`/product/${item.id}`)} key={item.id} className="w-full border rounded-md shadow-sm hover:shadow-lg cursor-pointer bg-white transition relative flex flex-col" >
                             <div className="absolute top-2 right-5 z-20 bg-white p-1 rounded-full shadow cursor-pointer"
                                 onClick={(e) => {
                                     e.stopPropagation()
@@ -82,7 +83,7 @@ export default function Home() {
                                 )}
 
                             </div>
-                            <div className="w-full overflow-hidden rounded-md bg-gray-100 flex-none shrink-0" style={{ height: "180px" }}>
+                            <div className="w-full overflow-hidden rounded-md bg-gray-100 flex-none shrink-0 h-40 sm:h-44 md:h-48">
                                 <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover object-center block" />
                             </div>
                             <div className="p-3">
@@ -99,6 +100,7 @@ export default function Home() {
                 </div >
             ) : <div className="flex justify-center items-center p-8 m-4"><p className="text-xl font-bold">Product list is Empty</p></div>
             }
+            <LowerFooter />
         </>
     )
 };

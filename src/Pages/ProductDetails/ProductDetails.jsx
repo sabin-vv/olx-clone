@@ -4,10 +4,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../db/firebase";
 import Header from "../../Components/Header/Header";
-import UpperFooter from "../../Components/Footer/UpperFooter";
-import LowerFooter from "../../Components/Footer/LowerFooter";
 import { userAuth } from "../../Components/Context/AuthContext";
 import toast from "react-hot-toast";
+import Footer from "../../Components/Footer/Footer";
 
 export default function ProductDetails() {
     const { id } = useParams();
@@ -117,8 +116,7 @@ export default function ProductDetails() {
                     </div>
                 </div>
             </div>
-            <UpperFooter />
-            <LowerFooter />
+            <Footer />
         </>
     );
 }

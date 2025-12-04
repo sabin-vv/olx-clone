@@ -6,6 +6,7 @@ import { db } from "../../db/firebase";
 import Header from "../../Components/Header/Header";
 import { userAuth } from "../../Components/Context/AuthContext";
 import toast from "react-hot-toast";
+import Footer from "../../Components/Footer/Footer";
 
 export default function Wishlist() {
     const [wishlist, setWishlist] = useState([]);
@@ -105,6 +106,7 @@ export default function Wishlist() {
                     </div>
                 )}
             </div>
+            <Footer />
         </>
     );
 }

@@ -4,8 +4,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../db/firebase";
 import { userAuth } from "../../Components/Context/AuthContext";
 import Header from "../../Components/Header/Header";
-import LowerFooter from "../../Components/Footer/LowerFooter";
-import UpperFooter from "../../Components/Footer/UpperFooter";
+import Footer from "../../Components/Footer/Footer"
 import { useNavigate } from "react-router-dom";
 
 export default function MyADS() {
@@ -40,7 +39,7 @@ export default function MyADS() {
     return (
         <>
             <Header />
-            <div className="max-w-5xl mx-auto mt-10 px-4">
+            <div className="max-w-5xl mx-auto mt-10 px-4 my-6">
                 <h1 className="text-3xl font-bold mb-6">My Ads</h1>
                 {myAds.length === 0 ? (
                     <div className="text-center text-lg text-gray-600 py-10">
@@ -70,8 +69,7 @@ export default function MyADS() {
                     </div>
                 )}
             </div>
-            <UpperFooter />
-            <LowerFooter />
+            <Footer />
         </>
     );
 }
