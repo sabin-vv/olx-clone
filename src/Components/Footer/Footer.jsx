@@ -46,12 +46,12 @@ export default function Footer() {
                     <div className="follow-section">
                         <span>Follow Us</span>
                         <div className="social-icons">
-                            <a href="#" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-facebook-icon/image;original=true" /></a>
-                            <a href="#" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-instagram-icon/image;original=true" /></a>
-                            <a href="#" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-youtube-icon/image;original=true" /></a>
-                            <a href="#" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-twitter-icon/image;original=true" /></a>
-                            <a href="#" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-whatsapp-icon/image;original=true" /></a>
-                            <a href="#" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-linkedin-icon/image;original=true" /></a>
+                            <a href="https://www.facebook.com/olxindia/" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-facebook-icon/image;original=true" /></a>
+                            <a href="https://www.instagram.com/olx_india/?hl=en" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-instagram-icon/image;original=true" /></a>
+                            <a href="https://www.youtube.com/@olx_india" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-youtube-icon/image;original=true" /></a>
+                            <a href="https://x.com/OLX_India" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-twitter-icon/image;original=true" /></a>
+                            <a href="" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-whatsapp-icon/image;original=true" /></a>
+                            <a href="https://www.linkedin.com/company/olxindia/" target="_blank"><img src="https://apollo.olx.in/v1/files/alias-linkedin-icon/image;original=true" /></a>
                         </div>
                     </div>
 

@@ -6,6 +6,7 @@ import { uploadClodinary } from "../../Cloudinary/cloudinary";
 import { useNavigate } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import { userAuth } from "../../Components/Context/AuthContext";
+import Footer from "../../Components/Footer/Footer";
 
 export default function Sell() {
     const [category, setCategory] = useState("");
@@ -17,7 +18,7 @@ export default function Sell() {
     const imageRef = useRef(null)
     const { user } = userAuth()
 
-    const handleImageUpload = async (e) => {
+    const handleImage = async (e) => {
         const file = e.target.files[0];
         if (!file) return
 
@@ -38,6 +39,18 @@ export default function Sell() {
         if (!category || !title || !price || !desc) {
             toast.error("Please fill all fields");
             return;
+        }
+        if (!/^\d*$/.test(price)) {
+            toast.error("Only digits are alllowed")
+            return
+        }
+        if (price <= 0) {
+            toast.error("Price cannot be negative")
+            return
+        }
+        if (desc.trim().length < 3) {
+            toast.error("Description must contain at least 3 characters")
+            return
         }
         if (!imageRef.current) {
             toast.error("Please choose an image")
@@ -67,7 +80,7 @@ export default function Sell() {
     return (
         <>
             <Header />
-            <div className="max-w-xl mx-auto mt-10 bg-white shadow-md p-6 rounded-md">
+            <div className="max-w-xl mx-auto mt-10 bg-white shadow-md p-6 rounded-md mb-6">
                 <h1 className="text-2xl font-bold mb-4">Post Your Ad</h1>
 
                 <label className="block font-semibold">Select Category</label>
@@ -90,7 +103,7 @@ export default function Sell() {
                 <textarea className="border w-full p-2 rounded mb-3" rows="3" placeholder="About the product..." onChange={(e) => setDesc(e.target.value)} ></textarea>
 
                 <label className="block font-semibold">Upload Photo</label>
-                <input ref={imageRef} type="file" className="border w-full p-2 rounded mb-3" onChange={handleImageUpload} />
+                <input ref={imageRef} type="file" className="border w-full p-2 rounded mb-3" onChange={handleImage} />
 
                 {loading && <p className="text-blue-600 mb-2">Uploading image...</p>}
 
@@ -98,6 +111,7 @@ export default function Sell() {
                     Post Ad
                 </button>
             </div>
+            <Footer />
         </>
     );
 }
