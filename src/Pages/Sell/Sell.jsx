@@ -25,6 +25,14 @@ export default function Sell() {
         if (!file.type.startsWith("image/")) {
             toast.error("Please choose a valid image file")
             imageRef.current = null
+            e.target.value = ""
+            return
+        }
+        const maxSize = 5 * 1024 * 1024
+        if (file.size > maxSize) {
+            toast.error("Image size should not exceed 5MB")
+            imageRef.current = null
+            e.target.value = ""
             return
         }
         imageRef.current = file
@@ -36,16 +44,28 @@ export default function Sell() {
             navigate("/")
             return
         }
-        if (!category || !title || !price || !desc) {
+        if (!category) {
+            toast.error("Please choose a Category!")
+            return
+        }
+        if (!title || !price || !desc) {
             toast.error("Please fill all fields");
             return;
         }
-        if (!/^\d*$/.test(price)) {
-            toast.error("Only digits are alllowed")
+        if (title.trim().length < 3) {
+            toast.error("Product name should be minimum 3 character")
             return
         }
-        if (price <= 0) {
-            toast.error("Price cannot be negative")
+        if (!/^[a-zA-Z0-9\s\-.,&()']+$/.test(title)) {
+            toast.error("Title contain Only letters, numbers, spaces, and  -.,&()' are allowed")
+            return
+        }
+        if (price <= 0 || price > 9999999) {
+            toast.error("Enter a valid price")
+            return
+        }
+        if (!/^\d*$/.test(price)) {
+            toast.error("Price should be digits")
             return
         }
         if (desc.trim().length < 3) {
