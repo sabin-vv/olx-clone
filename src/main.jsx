@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter asename="/olx-clone">
+  <BrowserRouter basename="/olx-clone">
     <AuthProvider>
       <StrictMode>
         <App />
